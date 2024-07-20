@@ -12,13 +12,13 @@ pipeline {
                 }
             }
         }
-        stage('Echo Content') {
-            steps {
-                script {
-                    def hookMeWebContent = readFile 'hook_me_web'
-                    sh "echo ${hookMeWebContent}"
-                }
-            }
-        }
+        // stage('Echo Content') {
+        //     steps {
+        //         script {
+        //             def hookMeWebContent = readFile 'hook_me_web'
+        //             sh "echo ${hookMeWebContent}"
+        //         }
+        //     }
+        // }
     }
 }
