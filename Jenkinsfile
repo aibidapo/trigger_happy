@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Code') {
+        stage('Echo Content') {
             steps {
-               git branch: 'main', url: 'https://github.com/aibidapo/trigger_happy.git'
+               sh echo $(<hook_me_web)
             }
         }
     }
