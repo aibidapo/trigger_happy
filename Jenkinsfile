@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Echo Content') {
             steps {
-               sh echo $(<hook_me_web)
+                script {
+                    def hookMeWebContent = readFile 'hook_me_web'
+                    sh "echo ${hookMeWebContent}"
+                }
             }
         }
     }
