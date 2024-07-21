@@ -8,11 +8,6 @@ pipeline {
                 sh '''
                 mkdir -p whoami
                 cp hook_me_web whoami/
-                python -c "
-                import os
-                print('Current directory contents:')
-                print(os.listdir('whoami'))
-                "
                 '''
             }
         }
