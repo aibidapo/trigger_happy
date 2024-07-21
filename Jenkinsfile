@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+        stage('Install python3-venv') {
+            steps {
+                sh '''
+                sudo apt-get update
+                sudo apt-get install -y python3-venv
+                '''
+            }
+        }
         stage('Setup Virtual Environment') {
             steps {
                 sh '''
@@ -18,7 +26,7 @@ pipeline {
                     cp hook_me_web whoami/
                     
                     # Activate the virtual environment
-                    source myenv/bin/activate
+                    . myenv/bin/activate
                     
                     # Run Python commands
                     python -c "
